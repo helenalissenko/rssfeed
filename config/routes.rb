@@ -1,5 +1,8 @@
 Rssfeed::Application.routes.draw do
-  match '/rss', to: 'rss_controller#rss', via:'get' 
+  resources :users
+
+  match '/rss', to: 'rss_controller#rss', via:'get'
+  match '/rss/send', to: 'rss_controller#sendMail', via:'get'  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
